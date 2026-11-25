@@ -26,6 +26,7 @@ Copy this structure into the checklist file. Replace the bracketed text. Keep on
 
 ## After the build
 - [ ] Run the project with three real examples, including one that should fail.
+- [ ] If it has a user interface: use it with the keyboard alone, and check every input and button has a clear name.
 - [ ] Write a README a friend could follow.
 - [ ] Note one thing you would change next time.
 ```

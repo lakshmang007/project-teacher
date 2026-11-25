@@ -1,6 +1,6 @@
 {
   "name": "project-teacher",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Turn any project into a learning guide and build plan: explains the concepts, shows the simplest way to build it, gives step-by-step prompts, and creates a checklist.",
   "author": {
     "name": "lakshmang007"

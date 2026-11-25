@@ -12,8 +12,8 @@ Use this order for every project, new or existing. Each step must be finished an
    - Done when: every output can be built from these pieces.
 4. **Smallest working version.** Build only the path from input to output for one example. No login, no styling, no extras.
    - Done when: the example works from start to finish, even if it looks plain.
-5. **Interface.** Add the way a person uses it (screen, command, button). Keep the layout simple.
-   - Done when: the person can complete the example without help.
+5. **Interface.** Add the way a person uses it (screen, command, button). Keep the layout simple. Make it usable by everyone from the start: every input and checkbox has a label, every button says what it does, and everything works with the keyboard alone.
+   - Done when: the person can complete the example without help, using only the keyboard.
 6. **Logic and rules.** Add the rules for edge cases: empty input, wrong input, the first and last item.
    - Done when: each rule has one test that fails if the rule breaks.
 7. **Test with real examples.** Run it with three real inputs, including one that should fail.
@@ -27,6 +27,7 @@ Use this order for every project, new or existing. Each step must be finished an
 - **Reuse before you write.** Check whether the project, the language, or the platform already does the job.
 - **Simplest first.** Add a feature only when a real example needs it.
 - **Test the important parts.** Money, security, saving data, and anything with branches need a check that fails when the logic breaks.
+- **Never cut accessibility.** Labels, clear button names and keyboard use are part of "working", not polish.
 
 ## Applying the pattern to an existing project
 

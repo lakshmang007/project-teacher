@@ -1,6 +1,6 @@
 ---
 name: project-teacher
-description: Turn any project into a learning guide and build plan. Use whenever someone wants to understand a project they built or found (a folder, repo or app), asks how it was made, asks for the simplest way it could have been built, wants the prompts or steps to build something, or wants a checklist to build an idea one step at a time. Also use it when a beginner says they have an idea and do not know where to start, or asks to explain the concepts in their code, even if they never say "skill", "tutorial" or "checklist".
+description: Teach and plan software projects for learners. Use this skill whenever someone wants to understand or learn from a whole project (their own, a friend's, a GitHub repo, or a folder) - walking through how it fits together, explaining the concepts or terms it uses, how it was made, or the simplest way it could have been built. Also use it whenever someone asks for a build checklist, a step-by-step plan, or a sequence of prompts to build or rebuild an app, and whenever a beginner or non-coder has an app idea and asks where to start. Phrases like "walk me through this repo", "teach me how this was made", "I've never coded", "where do I start", "which concepts does it use" or "prompts to rebuild it" all mean this skill, even without the words "skill", "tutorial" or "checklist". Not for fixing one bug, writing one function, a general concept question unrelated to a project, or checklists that are not about building software.
 ---
 
 # Project Teacher
@@ -59,12 +59,21 @@ Never invent a concept the project does not use. If a name is ambiguous, say whi
 
 Use `references/design-patterns.md` as the pattern to follow.
 
-Give a short comparison:
+**Existing project:** compare how it was built with the simplest way that still works.
 
-| | How it was built (or planned) | Simplest way that still works |
+| | How it was built | Simplest way that still works |
 |---|---|---|
 | Structure | ... | ... |
 | Libraries | ... | ... |
+| What you lose | ... | ... |
+
+**New idea:** nothing is built yet, so compare two or three real options and recommend one. For example, for a small website: one HTML file, separate HTML/CSS/JS files, or a framework.
+
+| | Option A (recommended) | Option B |
+|---|---|---|
+| Files and setup | ... | ... |
+| Libraries | ... | ... |
+| Good for | ... | ... |
 | What you lose | ... | ... |
 
 Rules:
@@ -84,6 +93,8 @@ For each step, show:
 ## Step 6: Create the checklist
 
 Use `references/checklist-template.md`. Each item has a goal, the prompt to use, a "done when" test, and the one concept it teaches.
+
+If the project has a user interface (web page, app, form), the step that adds the interface must also make it usable by everyone: every input and checkbox has a label, every button has a name that says what it does, and it works with the keyboard alone. Put this in that step's prompt and its "done when" test. Fixing it at the end is harder, and beginners never learn it otherwise.
 
 - Show the checklist in chat by default.
 - Write it to a file (for example `BUILD-CHECKLIST.md`) only after the user says yes, and only in the folder they name. Writing into their project is an edit they should approve.

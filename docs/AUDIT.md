@@ -1,6 +1,46 @@
-# Audit: project-teacher 0.1.0
+# Audit: project-teacher
 
-This audit covers the skill files and the Python scanner. It was run by hand, with the commands listed below, on Windows 11 with Python 3.13.
+## 0.2.0: trigger test and end-to-end test
+
+### Trigger test
+
+Does Claude pick this skill for the right requests? 20 realistic queries (10 should trigger, 10 near-misses that should not), each run twice through `claude -p` with the Haiku model, checking whether Claude invoked the skill.
+
+| | 0.1.0 description | 0.2.0 description |
+|---|---|---|
+| Should trigger (20 runs) | 7 | 15 |
+| Should not trigger (20 runs) | 20 | 20 |
+| Total correct | 27/40 (68%) | 35/40 (88%) |
+
+Still weak: "teach me how my friend's weather app on GitHub was made" (0/2), and "make a build checklist", "explain this Flask project", "turn this project into a learning guide" (1/2 each).
+
+Caveat: the 0.2.0 description was written after seeing which of these same queries failed, so 88% is likely optimistic. A fresh, held-out query set would give a fairer score.
+
+### End-to-end test: building a website with the skill
+
+The skill was used for real on: "I want to build a simple to-do list website. I've never coded." It produced a 7-step plan (one `index.html` file, browser localStorage, no libraries), and the site was built by following that checklist. Each step's "done when" check was run in a browser:
+
+| Step | Done-when check | Result |
+|---|---|---|
+| 1. Empty page | Heading shows | Pass |
+| 2. Add a task | Typed task appears, box clears | Pass |
+| 3. Tick done | Ticked task is crossed out | Pass |
+| 4. Delete | Deleting one task leaves the other | Pass |
+| 5. Survive refresh | Tasks and ticks remain after reload | Pass |
+| 6. Handle mistakes | Empty and spaces-only tasks ignored; Enter adds | Pass |
+| 7. Tidy look | Clean at desktop width; no sideways scroll at 375px phone width | Pass |
+
+### Gaps found by the end-to-end test (all fixed in 0.2.0)
+
+1. **Accessibility was missing from the plan.** The checkboxes had no labels, so a screen reader could not say which task each belonged to. Fixed: accessibility is now part of the interface step and the checklist.
+2. **Scanner did not recognise a plain HTML site.** It printed "none recognised". Fixed and tested: plain site detected; a Node project with an `index.html` still shows only Node; an empty folder still says "none recognised".
+3. **The "simplest path" table only fit existing projects.** Fixed: new ideas now compare real options.
+
+---
+
+## 0.1.0: security and quality audit
+
+This part covers the skill files and the Python scanner. It was run by hand, with the commands listed below, on Windows 11 with Python 3.13.
 
 ## Summary
 

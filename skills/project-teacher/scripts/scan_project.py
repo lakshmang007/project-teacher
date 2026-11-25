@@ -73,6 +73,11 @@ def main():
     for marker, label in STACK_MARKERS.items():
         if os.path.exists(os.path.join(root, marker)):
             stack.append(label)
+    # No build tool or package file, but a web page: a plain static website.
+    if not stack and any(
+        os.path.isfile(os.path.join(root, d, "index.html")) for d in ("", "public", "src", "docs")
+    ):
+        stack.append("Static website (HTML/CSS/JavaScript, no build step)")
     print("Detected stack:")
     print("  " + ("\n  ".join(stack) if stack else "none recognised (ask the user)"))
     print()
