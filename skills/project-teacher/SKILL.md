@@ -133,6 +133,8 @@ Use `references/checklist-template.md`. Each item has a goal, the prompt to use,
 
 If the project has a user interface (web page, app, form), the step that adds the interface must also make it usable by everyone: every input and checkbox has a label, every button has a name that says what it does, and it works with the keyboard alone. Put this in that step's prompt and its "done when" test. Fixing it at the end is harder, and beginners never learn it otherwise.
 
+Order the steps so each "from day one" safeguard from the expert brief arrives no later than the step that first needs it. For example, database access rules go in the same step as sign-up, not after it, and input checks go in the step that first accepts input.
+
 - Show the checklist in chat by default.
 - Write it to a file (for example `BUILD-CHECKLIST.md`) only after the user says yes, and only in the folder they name. Writing into their project is an edit they should approve.
 

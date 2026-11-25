@@ -14,6 +14,39 @@ Give it a project folder, or just an idea, and it will:
 
 It works for any language or stack. It is written for beginners who learn by building, and for experienced developers who want a fast walkthrough of an unfamiliar codebase.
 
+**Quick install (Claude Code):**
+
+```
+/plugin marketplace add lakshmang007/project-teacher
+/plugin install project-teacher@project-teacher
+```
+
+## See it in action
+
+These are real, unedited outputs from Claude with this skill installed.
+
+**You type one sentence:**
+
+> "I want to make a website where students in my college can sell their old textbooks to each other. I've never coded. Where do I start?"
+
+**It answers like an expert mentor** (excerpt):
+
+> **Version 1 (the smallest useful thing):** sign up with your college email, post a listing, browse and search, mark your own listing as sold.
+> **Left out for now:** payments, in-app chat, photos and ratings. Students can meet on campus and pay each other directly.
+>
+> **From day one:** turn on the database's access rules before anyone signs up. Never put secret keys in public code. Give every input a label.
+>
+> **Recommended for this project:** Ponytail keeps the code small (use from step 1). Supabase handles login and the database for free (step 5); inactive free projects get paused.
+>
+> **5. Real database.** *"Connect Supabase. Create a listings table, and save and load listings from it. Keep keys out of public code."*
+> **Done when:** a listing is still there after you refresh the page.
+
+| Example | What it shows |
+|---|---|
+| [Planning a new idea](examples/textbook-marketplace-plan.md) | Idea shaping, expert brief, simplest path, recommended skills and free tools, and a 9-step checklist with a prompt and a check for every step |
+| [Explaining an existing project](examples/todo-site-explained.md) | 8 concepts with analogies and exact line numbers, plus an expert check that spots a real security detail |
+| [The to-do site it was built from](examples/todo-site/) | A complete one-file website built by following the skill's checklist, every step checked in a browser |
+
 ## Install
 
 ### Option 1: Claude Code plugin (recommended)
@@ -68,6 +101,7 @@ project-teacher/
 │       │   └── checklist-template.md  format for the build checklist
 │       └── scripts/
 │           └── scan_project.py   read-only project scanner (Python 3, standard library only)
+├── examples/                     real outputs from the skill, and the site built with it
 ├── docs/
 │   └── AUDIT.md                  security and quality audit, with test results
 ├── CHANGELOG.md

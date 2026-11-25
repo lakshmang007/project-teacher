@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My To-Do List</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 32rem; margin: 2rem auto; padding: 0 1rem; }
+    .row { display: flex; gap: 0.5rem; }
+    #task { flex: 1; padding: 0.5rem; font-size: 1rem; }
+    button { padding: 0.5rem 0.8rem; font-size: 1rem; cursor: pointer; }
+    ul { list-style: none; padding: 0; }
+    li { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 0; border-bottom: 1px solid #ddd; }
+    li label { flex: 1; display: flex; align-items: center; gap: 0.5rem; }
+    .done { text-decoration: line-through; color: #777; }
+  </style>
+</head>
+<body>
+  <h1>My To-Do List</h1>
+  <div class="row">
+    <input id="task" placeholder="New task" aria-label="New task">
+    <button id="add">Add</button>
+  </div>
+  <ul id="list"></ul>
+
+  <script>
+    // each task: { text, done }; saved in the browser so it survives a refresh
+    const tasks = JSON.parse(localStorage.getItem("tasks") || "[]");
+
+    function save() {
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+    const list = document.getElementById("list");
+    const input = document.getElementById("task");
+
+    function render() {
+      save();
+      list.innerHTML = "";
+      tasks.forEach((task, i) => {
+        const li = document.createElement("li");
+
+        const box = document.createElement("input");
+        box.type = "checkbox";
+        box.checked = task.done;
+        box.addEventListener("change", () => {
+          task.done = box.checked;
+          render();
+        });
+
+        // A <label> ties the checkbox to its text, so screen readers say the task name.
+        const label = document.createElement("label");
+        const text = document.createElement("span");
+        text.textContent = task.text;
+        if (task.done) text.className = "done";
+        label.append(box, text);
+
+        const del = document.createElement("button");
+        del.textContent = "Delete";
+        del.setAttribute("aria-label", "Delete " + task.text);
+        del.addEventListener("click", () => {
+          tasks.splice(i, 1);
+          render();
+        });
+
+        li.append(label, del);
+        list.appendChild(li);
+      });
+    }
+
+    function addTask() {
+      const text = input.value.trim();
+      if (!text) return;  // ignore empty or spaces-only tasks
+      tasks.push({ text, done: false });
+      input.value = "";
+      render();
+    }
+
+    document.getElementById("add").addEventListener("click", addTask);
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") addTask();
+    });
+
+    render();
+  </script>
+</body>
+</html>

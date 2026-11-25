@@ -2,6 +2,15 @@
 
 All notable changes to this project are recorded here. This project follows [Semantic Versioning](https://semver.org/).
 
+## [0.3.1] - 2026-11-25
+
+### Added
+- `examples/`: real, unedited outputs (planning a new idea; explaining an existing project) and the to-do site built by following the skill's checklist.
+- README: quick install at the top and a "See it in action" section.
+
+### Fixed
+- Checklist steps are now ordered so each "from day one" safeguard arrives no later than the step that needs it (for example, database access rules in the same step as sign-up). Found while reviewing the new-idea example.
+
 ## [0.3.0] - 2026-11-25
 
 ### Added
