@@ -8,7 +8,7 @@
       "name": "project-teacher",
       "source": "./",
       "description": "Turn any project into a learning guide and build plan with concepts, the simplest build path, prompts and a checklist.",
-      "version": "0.2.0"
+      "version": "0.3.0"
     }
   ]
 }

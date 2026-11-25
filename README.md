@@ -1,13 +1,16 @@
 # project-teacher
 
-A Claude skill that turns any project into a learning guide and build plan.
+A Claude skill that acts like a domain expert and mentor for "vibe coders": people who build by describing what they want to an AI.
 
 Give it a project folder, or just an idea, and it will:
 
-1. **Explain the concepts** the project uses, in plain words, with one everyday analogy each.
-2. **Show the simplest way** it could have been built, and what that simpler way gives up.
-3. **Give a prompt chain**: short, ordered prompts that build the project one step at a time.
-4. **Create a checklist** with a "done when" test for every step.
+1. **Shape the idea**: a small first version, "later" ideas an expert would suggest, and one question that invites your own twist.
+2. **Brief you like an expert** in your field (web, mobile, data, games, hardware and more): where to start, what never to skip, and the mistakes beginners make.
+3. **Explain the concepts** the project uses, in plain words, with one everyday analogy each.
+4. **Show the simplest way** to build it, and what that simpler way gives up.
+5. **Recommend free tools and Claude skills before you ask**: real GitHub skills with their install commands, and free hosting, databases and editors with their limits.
+6. **Give a prompt chain and a checklist** with a "done when" test for every step.
+7. **Coach your prompting** while you build: it shows a better version of a vague prompt and says why.
 
 It works for any language or stack. It is written for beginners who learn by building, and for experienced developers who want a fast walkthrough of an unfamiliar codebase.
 
@@ -58,6 +61,8 @@ project-teacher/
 │   └── project-teacher/
 │       ├── SKILL.md              the workflow Claude follows
 │       ├── references/
+│       │   ├── domains.md             expert notes per project type (web, mobile, data, games, hardware...)
+│       │   ├── recommendations.md     verified Claude skills and free tools, with install commands
 │       │   ├── design-patterns.md     the 8-step pattern for building any project
 │       │   ├── prompt-patterns.md     copy-ready prompts for each step
 │       │   └── checklist-template.md  format for the build checklist

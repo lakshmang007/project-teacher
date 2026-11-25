@@ -2,6 +2,14 @@
 
 All notable changes to this project are recorded here. This project follows [Semantic Versioning](https://semver.org/).
 
+## [0.3.0] - 2026-11-25
+
+### Added
+- **Domain expert role**: the skill names the project's field and briefs the user like an expert in it (where to start, what never to skip, common beginner mistakes). New `references/domains.md` covers websites, web apps with data, mobile, APIs, data and ML, automation, games, and hardware.
+- **Idea shaping**: a one-sentence restatement, a small Version 1, "later" ideas, and one stretch question that invites the user's own twist.
+- **Recommendations before the user asks**: new `references/recommendations.md` lists verified Claude skills (Ponytail, Superpowers, Anthropic example skills, Graphify) with install commands taken from their own READMEs, and free tools with their main limits.
+- **Prompt coaching**: while building, the skill checks the user's own prompts for goal, file, exclusions and check, and shows an improved version.
+
 ## [0.2.0] - 2026-11-25
 
 ### Changed

@@ -1,5 +1,24 @@
 # Audit: project-teacher
 
+## 0.3.0: expert mentor behaviour
+
+### Recommendations checked against their sources
+
+Every skill in `references/recommendations.md` was confirmed to exist on GitHub (`anthropics/skills`, `obra/superpowers`, `DietrichGebert/ponytail`, `Graphify-Labs/graphify`), and each install command was copied from that repository's own README. The named sub-skills (`frontend-design`, `webapp-testing`, `mcp-builder`, `brainstorming`, `systematic-debugging`, `test-driven-development`) were confirmed in each repository's `skills/` folder. Free-tier limits are as known in November 2026 and the skill tells users to check the pricing pages.
+
+### Real sessions
+
+Headless `claude -p` sessions (Sonnet) with the skill installed:
+
+| Run | Request | Result |
+|---|---|---|
+| 1 | New idea: textbook marketplace, never coded | Idea shaping, expert brief, free tools and skills all present. **Gap:** checklist steps had no prompts. |
+| 1 | Explain the to-do site | Concepts with line numbers, prompt-pattern praise. **Gap:** no recommendations. |
+| 2 | Same two requests, after an output-order rule | Explain mode now gives an expert check and a free host. New idea: steps 7–8 still had no prompts. |
+| 3 | New idea, after a "no deferred prompts" rule | All 9 steps have an exact prompt and a done-when check; skills and free tools recommended. |
+
+Not yet checked: prompt coaching during a multi-turn build (needs an interactive session), and domains other than websites.
+
 ## 0.2.0: trigger test and end-to-end test
 
 ### Trigger test
