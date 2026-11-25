@@ -1,0 +1,14 @@
+{
+  "name": "project-teacher",
+  "owner": {
+    "name": "lakshmang007"
+  },
+  "plugins": [
+    {
+      "name": "project-teacher",
+      "source": "./",
+      "description": "Turn any project into a learning guide and build plan with concepts, the simplest build path, prompts and a checklist.",
+      "version": "0.1.0"
+    }
+  ]
+}
